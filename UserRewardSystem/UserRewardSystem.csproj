@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB3ADBAD-2348-45BD-A21D-6E9A7EA98CDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserRewardSystem</RootNamespace>
+    <AssemblyName>UserRewardSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Interfaces\IEventDefinitionRepository.cs" />
+    <Compile Include="Application\Interfaces\IEventInstanceRepository.cs" />
+    <Compile Include="Application\Interfaces\IEventRepository.cs" />
+    <Compile Include="Application\Interfaces\IEventRewardRuleRepository.cs" />
+    <Compile Include="Application\Interfaces\IProductInventoryRepository.cs" />
+    <Compile Include="Application\Interfaces\IProductRepository.cs" />
+    <Compile Include="Application\Interfaces\IProductService.cs" />
+    <Compile Include="Application\Interfaces\IRedemptionRepository.cs" />
+    <Compile Include="Application\Interfaces\IRedemptionService.cs" />
+    <Compile Include="Application\Interfaces\ITransactionRepository.cs" />
+    <Compile Include="Application\Interfaces\ITransactionService.cs" />
+    <Compile Include="Application\Interfaces\IUserAccountRepository.cs" />
+    <Compile Include="Application\Interfaces\IUserRepository.cs" />
+    <Compile Include="Application\Interfaces\IUserService.cs" />
+    <Compile Include="Application\Services\EventService.cs" />
+    <Compile Include="Application\Services\ProductService.cs" />
+    <Compile Include="Application\Services\RedemptionService.cs" />
+    <Compile Include="Application\Services\TransactionService.cs" />
+    <Compile Include="Application\Services\UserService.cs" />
+    <Compile Include="Domain\Common\BaseEntity.cs" />
+    <Compile Include="Domain\Common\DomainExceptions.cs" />
+    <Compile Include="Domain\Entities\Event\Event.cs" />
+    <Compile Include="Domain\Entities\Event\EventDefinition.cs" />
+    <Compile Include="Domain\Entities\Event\EventInstance.cs" />
+    <Compile Include="Domain\Entities\Event\EventRewardRule.cs" />
+    <Compile Include="Domain\Entities\Product\Product.cs" />
+    <Compile Include="Domain\Entities\Product\ProductInfo.cs" />
+    <Compile Include="Domain\Entities\Product\ProductInventory.cs" />
+    <Compile Include="Domain\Entities\Redemption\RedemptionProcess.cs" />
+    <Compile Include="Domain\Entities\Redemption\RedemptionRecord.cs" />
+    <Compile Include="Domain\Entities\Transactions\ITransactionValidator.cs" />
+    <Compile Include="Domain\Entities\Transactions\Transaction.cs" />
+    <Compile Include="Domain\Entities\Transactions\TransactionDetail.cs" />
+    <Compile Include="Domain\Entities\Transactions\TransactionSummary.cs" />
+    <Compile Include="Domain\Entities\User\User.cs" />
+    <Compile Include="Domain\Entities\User\UserAccount.cs" />
+    <Compile Include="Domain\Enums\RedemptionStatus.cs" />
+    <Compile Include="Domain\Enums\TransactionStatus.cs" />
+    <Compile Include="Domain\Enums\TransactionType.cs" />
+    <Compile Include="Domain\Enums\UserRole.cs" />
+    <Compile Include="Infrastructure\InMemoryEventDefinitionRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryEventInstanceRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryEventRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryEventRewardRuleRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryProductInventoryRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryProductRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryRedemptionRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryUserAccountRepository.cs" />
+    <Compile Include="Infrastructure\InMemoryUserRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
